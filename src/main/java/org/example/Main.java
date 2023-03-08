@@ -11,7 +11,7 @@ public class Main {
         String noValue = "brak";
         File file = new File(fileName);
         HashMap<String, Integer> laptopCountMap = new HashMap<>();
-        System.out.printf("%-2s %-14s %-14s %-14s %-14s %-14s %-14s %-14s %-14s %-14s %-14s %-14s %-29s %-14s %-30s %-14s ",
+        System.out.printf("%-7s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-33s %-18s %-33s %-18s ",
                 " ", "Producent", "Przekatna", "Rozdzielczosc", "Powierzchnia", "Dotyk", "Nazwa Proc", "l. rdzeni", "Taktowanie", "RAM", "Poj. dysku",
                 "Rodzaj dysku", "Grafika", "VRAM", "System", "Napęd");
 
@@ -24,7 +24,7 @@ public class Main {
                 rowNumber++;
                 String data = inputStream.nextLine();
                 String[] values = data.split(";");
-                System.out.printf("%-3s", rowNumber);
+                System.out.printf("%-3s |  ", rowNumber);
                 int i = 0;
                 for (String value : values) {
                     i++;
@@ -32,20 +32,20 @@ public class Main {
                         switch (i) {
                             case 12:
                             case 14:
-                                System.out.printf("%-30s", noValue);
+                                System.out.printf("%-30s |  ", noValue);
                                 break;
                             default:
-                                System.out.printf("%-15s", noValue);
+                                System.out.printf("%-15s |  ", noValue);
                                 break;
                         }
                     } else {
                         switch (i) {
                             case 12:
                             case 14:
-                                System.out.printf("%-30s", value.trim());
+                                System.out.printf("%-30s |  ", value.trim());
                                 break;
                             default:
-                                System.out.printf("%-15s", value.trim());
+                                System.out.printf("%-15s |  ", value.trim());
                                 break;
                         }
                     }
