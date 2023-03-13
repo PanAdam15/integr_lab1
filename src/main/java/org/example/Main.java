@@ -14,11 +14,9 @@ public class Main {
         System.out.printf("%-7s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-18s %-33s %-18s %-33s %-18s ",
                 " ", "Producent", "Przekatna", "Rozdzielczosc", "Powierzchnia", "Dotyk", "Nazwa Proc", "l. rdzeni", "Taktowanie", "RAM", "Poj. dysku",
                 "Rodzaj dysku", "Grafika", "VRAM", "System", "Napęd");
-
         System.out.println();
         try {
             Scanner inputStream = new Scanner(file);
-            inputStream.useDelimiter(";");
             int rowNumber = 0;
             while (inputStream.hasNext()) {
                 rowNumber++;
@@ -49,7 +47,6 @@ public class Main {
                                 break;
                         }
                     }
-
                 }
                 if (laptopCountMap.containsKey(values[0])) {
                     int count = laptopCountMap.get(values[0]);
@@ -59,7 +56,7 @@ public class Main {
                 }
                 System.out.println();
             }
-            System.out.println("\nLiczba laptopów każdego z producentów:");
+            System.out.println("\nLiczba laptopów:");
             for (String manufacturer : laptopCountMap.keySet()) {
                 System.out.println(manufacturer + ": " + laptopCountMap.get(manufacturer));
             }
